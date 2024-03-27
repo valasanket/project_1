@@ -1,0 +1,17 @@
+@media only screen and  (min-width: 767px) {
+    
+    .titel_h2{
+        font-size: 30px;
+    }
+
+    .top_slide_section p{
+        width: 55% !important;
+        font-size: 20px !important;
+    }
+
+    .img_flot img{
+        float: left;
+        width: 100%;
+        padding-right: 0px;
+     }
+}

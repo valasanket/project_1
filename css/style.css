@@ -1,0 +1,841 @@
+/* https://htmldemo.net/bustle/index.html */
+
+
+/* open-sans-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/open-sans-v36-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/open-sans-v36-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/open-sans-v36-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+ /* raleway-100 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  src: url('../fonts/raleway-v29-latin-100.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* raleway-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/raleway-v29-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* raleway-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/raleway-v29-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --open-sans:'Open Sans';
+  --raleway:'Raleway';
+  --color:#26c7cc;
+  --white:#ffffff;
+  --text-color:#444444;
+}
+
+.font-Raleway{
+  font-family: 'Raleway';
+}
+
+ul{
+  list-style: none;
+}
+
+a
+{
+  color: inherit;
+  text-decoration: none;
+}
+
+h1{
+  font-family: var(--raleway);
+}
+p{
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+}
+
+body{
+  font-family: var(--open-sans);
+  font-weight: 300;
+  color: var(--text-color);
+  font-size: 14px;
+  line-height: 20px;
+  background-color: #ffffff;
+  font-weight: 400;
+  color: #444444;
+}
+
+.top_info{
+  background-color: #1e2127!important;
+  
+}
+
+.left_info ul li a:hover{
+  color: var(--color);
+  transition: 1s;
+}
+
+.right_info ul li a:hover{
+  color: var(--color);
+  transition: 1s;
+}
+
+header{
+  color: #464646;
+}
+
+.titel_h3{
+  font-size: 37px;
+}
+
+nav{
+  font-weight: 900;
+  font-size: 13px;
+}
+
+nav ul li a:hover{
+  color: var(--color);
+  transition: 0.5s;
+}
+
+.logo a{
+  font-size: 20px;
+  font-weight: 700;
+  color: #333333;
+}
+
+.spaser{
+  padding: 100px 0px 70px 0px ;
+}
+
+.color_text{
+  color: #ffffff;
+}
+
+.margin_bottom{
+  margin-bottom: 75px;
+}
+
+.bg_color{
+  background-color: #fafafa;
+}
+
+
+.button{
+  background-color: var(--color);
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease 0s;
+  margin: 45px 0px 30px 0px;
+  border-radius: 3px;
+  color: var(--white);
+     &:hover{
+        background-color: var(--text-color);
+        color: var(--white);
+     }
+}
+
+
+
+
+ /*-------------------------------page name section Start-----------------------------------  */
+
+.page_name{
+  background-color: #ededed;
+  padding: 100PX 15PX;
+}
+
+.page_name div span{
+  color: var(--color);
+}
+
+.page_name div a:hover{
+  color: var(--color);
+  transition: 0.2s linear;
+}
+
+/*-------------------------------page name section End-----------------------------------  */
+
+
+
+/* --------------------------------- to top icon start-------------------------------------- */
+
+
+.to_top{
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  height: 50px;
+  width: 50px;
+  background-color: var(--color);
+  color: white;
+  z-index: 999;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.to_top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --------------------------------- to top icon end-------------------------------------- */
+
+
+/* -------------------------------header section start------------------------------------------- */
+
+.fixed {
+  position: fixed;
+  top:0; left:0;
+  width: 100%; 
+  background-color: #f7f9ff;
+  z-index: 999;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: .3s;
+}
+
+
+.menu_header_sm{
+  position: absolute;
+  /* top: 60px; */
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #fff;
+}
+ 
+.menu_header_sm li{
+  padding: 10px 10px;
+}
+ 
+
+ 
+
+
+/* -------------------------------header section end--------------------------------------------- */
+
+
+
+/* ----------------------------Slider Section Start-------------------------------- */
+
+.slider{
+  background-image: url(../assets/asset\ 32.webp);
+  height: 100vh;  
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  
+}
+
+.slider::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0, 0, 0.45);
+  /* padding: 250px 0px; */
+  z-index: 0;
+}
+
+.slider_conatine{
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+   width: 100%;
+}
+
+/* 
+.slider_heading{
+  align-items: end;
+
+  justify-content: space-around;
+  flex-direction: column-reverse;
+  align-items: ;
+  
+} */
+
+
+.get_btn{
+  padding: 12px 45px;
+  background-color: #26c7cc;
+  display: inline-block;
+  border-radius: 40px;
+  font-size: 16px;
+  margin-top: 15px;
+
+}
+
+/* ----------------------------Slider Section End-------------------------------- */
+
+
+/* ----------------------------Who We Are Section Start-------------------------------- */
+
+.heading{
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 9px;
+}
+
+.img_box_size{
+  width: 40px;
+}
+
+.h2_small{
+  margin: 22px 0px 16px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* ----------------------------Who We Are Section End-------------------------------- */
+
+/* <!-- -----------------------------------Recent Works start----------------------------------- --> */
+
+h4{
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 13px;
+  margin-top: 16px;
+  font-family: var(--raleway);
+}
+
+/* <!-- -----------------------------------Recent Works end----------------------------------- --> */
+
+
+/* <!-- -----------------------------------Meet Our Team Start----------------------------------- --> */
+
+.card-icon{
+  color: #686868;
+}
+
+.card-icon a{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #eeeeee;
+  border-radius: 50%;
+  margin: 0px 5px 24px;
+
+}
+
+.card-icon a i{
+  font-size: 20px;
+ line-height: 0px;
+ 
+}
+
+.meet_card{
+  background-color: #ffffff;
+  transition: .3s ease;
+}
+
+.meet_card:hover{
+  box-shadow: 0px 4px 10px rgba(0,0, 0, 0.4);
+  transform: translateY(-10px);
+}
+
+.card-icon a:hover{
+  background-color: #26c7cc;
+  color: #ffffff;
+  transition: 0.2s;
+}
+
+
+
+
+
+
+/* <!-- -----------------------------------Meet Our Team End------------------------------------- --> */
+
+
+/* <!-- -----------------------------------Testimonial Start------------------------------------- --> */
+
+
+.img_flot img{
+   float: left;
+   width: 31%;
+   padding-right: 20px;
+}
+
+.parallax::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color:#fafafa;
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.parallax{
+  background-image: url(../assets/asset\ 34.webp);
+  object-fit: cover;
+  
+  overflow: hidden;
+  position: relative;
+  background-attachment: fixed;
+  padding: 80px 0px 70px 0px;
+  background-position: center center;
+  background-size: cover;
+}
+
+.testimonial_icon{
+  font-size: 45px;
+  color: #6d6d6d;
+  margin-bottom: 11px
+}
+
+.counter{
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 50px;
+  margin-bottom: 10px;
+  color: #39434a;
+}
+
+/* <!-- -----------------------------------Testimonial End--------------------------------------- --> */
+
+/* <!-- -----------------------------------Latest Blog Start----------------------------------- --> */
+
+.blog_content{
+  padding: 26px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
+.blog_content h2 a{
+  color: #272727;
+  transition: 0.3s;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--raleway);
+}
+
+.blog_content{
+  font-size: 12px;
+  color: #666666;
+  font-weight: 400;
+}
+
+.latest_blog_img img{
+  object-fit: cover;
+  background-size: cover;
+  width: 100%;
+}
+
+.latest_content p{
+  font-size: 15px;
+}
+
+.blog_content h2 > a:hover{
+   color: #26C7CC;
+}
+
+.latest_blog_img{
+  position: relative;
+}
+
+.latest_blog_img a::before{
+   content: "";
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   background-color: #B3BCBE;
+   transition: 0.3s;
+   opacity: 0;
+}
+
+.latest_blog_img:hover a::before{
+  opacity: 0.5;
+}
+
+
+/* -----------blog_page Start------------------- */
+
+.blog_page_img:hover a::before{
+  background-color: black;
+  opacity: 0.4;
+}
+
+.blog_page_input{
+  border: 2px solid rgba(47, 46, 46, 0.1);
+  padding: 9px 12px;
+  margin: 5px 0px 0px 0px;
+  width: 100%;
+ 
+}
+
+.blog_page_a{
+  background-color: var(--color);
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 18px ;
+  margin-left: -5px;
+ font-weight: 600;
+  position: absolute;
+  bottom: 1px;
+  right: 0;
+  color: var(--white);
+  transition: 0.3s linear ;
+   &:hover{
+    background-color: var(--text-color);
+   }
+}
+
+.blog_right_a li{
+   padding: 10px 0px;
+   border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+.blog_right_a li a{
+  display: block;
+  transition: 0.1s ease-in;
+    &:hover{
+      color: var(--color);
+    }
+}
+
+.blog_page_btn a{
+    display: inline-block;
+    padding: 7px 12px ;
+    margin: 0px 7px 12px 0px;
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    transition: 0.2s;
+      &:hover{
+       
+        background-color: var(--color);
+        color: var(--white);
+      }
+}
+
+.blog_page_more_op{
+  font-size: 16px;
+  text-align: left;
+  margin-top: 10px;
+  margin-left: -12px;
+}
+
+.blog_page_more_op a{
+  padding: 12px 15px!important;
+  color: var(--color);
+  border: 1px solid rgba(128, 128, 128, 0.4);
+    &:hover{
+      background-color: var(--color);
+      color: var(--white);
+    }
+}
+
+.blog_box1_bg_color{
+  color: var(--white)!important;
+  background-color: var(--color);
+  cursor: no-drop;
+}
+/* ---------------------------------blog_page end-------------------------- */
+
+/* <!-- -----------------------------------------------------------------------Latest Blog End------------------------------------------------------------------------------------ --> */
+
+
+/* <!-- -----------------------------------------------------------------------Slider Start------------------------------------------------------------------------------ --> */
+
+.testimonial_slider a{
+  padding: 20px 35px;
+  border: 1px solid #999999;
+
+}
+
+.testimonial_slider{
+  display: flex;
+  width: 100%;
+  padding: 0px 20px;
+  justify-content: center;
+}
+
+
+/* <!-- -----------------------------------Slider End------------------------------------- --> */
+
+
+/* <!-- -----------------------------------Footer Start----------------------------------- --> */
+
+
+
+.footer_color{
+  background-color: #252830;
+  color: #ffffff;
+}
+
+.icon_footer{
+  width: 30PX;
+  height: 30px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30PX;
+  transition: 0.3s;
+  margin: 0px 5px;
+}
+
+.icon_footer:hover{
+   color: #26C7CC;
+   border-color: #26C7CC;
+}
+
+.footer_ul li{
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid #666;
+  margin: 0px 5px 10px 0px ;
+}
+
+.footer_ul li a:hover{
+  color: #26C7CC;
+  transition: 0.3s;
+}
+
+.footer_item{
+  margin-bottom: 40px;
+}
+
+.footer-text h6 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+
+.footer_img{
+  float: left;
+}
+
+.footer_img a img{
+  width: 80px;
+}
+
+input:focus{
+  outline: none;
+}
+
+.sign_up{
+  padding: 12px 40px ;
+  font-weight: 900;
+  background-color: #26C7CC;
+  border-radius: 5px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  border: none;
+  transition: 0.3s;
+
+}
+
+.sign_up:hover{
+  background-color: #414349;
+}
+
+.footer_bottom_icon{
+  padding: 0px 10px ;
+  transition: 0.3s;
+  color: #ffffff;
+}
+
+.footer_bottom_icon:hover{
+  color: #26C7CC;
+}
+
+/* <!-- -----------------------------------Footer Eand----------------------------------- --> */
+
+
+/* <!---------------------------------------WE ARE BUSTLE THEME Start----------------------------------> */
+
+.progress{
+  background-color: #E2E2E2;
+  border-radius: 3px;
+  height: 20px;
+  margin-bottom: 32px;
+}
+
+.progress_bar{
+  background-color: var(--color);
+}
+
+/* <!---------------------------------------WE ARE BUSTLE THEME End------------------------------------> */
+
+/* <!-- -----------------------------------premiume card Start--------------------------------------------- --> */
+
+.primeume_card{
+  border: 1px solid hsl(180, 2%, 91%);
+}
+
+.primeume_card i{
+  font-size: 80px;
+  padding-bottom: 25px;
+}
+
+.primeume_card div span:nth-child(2){
+  font-size: 64px;
+  color: hsl(0, 0%, 20%);
+  font-weight: semibold;
+}
+.primeume_card div span:nth-child(1){
+  font-size: 28px;
+  color: #999999;
+}
+.primeume_card div span:nth-child(3){
+  font-size: 16px;
+  color: #999999;
+}
+.primeume_card div {
+  padding: 40px 0px 28px 0px ;
+  background-color: hsl(0, 0%, 94%);
+  transition: 0.3s ease-in-out;
+}
+.primeume_card:hover div{
+  color: var(--white);
+  background-color: var(--color);
+}
+
+.primeume_card:hover div>span{
+  color: var(--white);
+}
+
+.primeume_card ul li{
+  padding: 8px 0px;
+  font-size: 14px;
+  color: hsl(0, 0%, 60%);
+}
+
+.primeume_card a{
+  padding: 13px 31px ;
+  margin: 10px 0px 34px 0px ;
+  background-color: hsl(0, 0%, 94%);
+  display: inline-block;
+  border-radius: 330px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: 0.3s all;
+    &:hover{
+      color: var(--white);
+      background-color: var(--color);
+    }
+}
+
+.bpremium_bg div{
+  background-color: var(--color);
+}
+.bpremium_bg div span{
+  color: var(--white)!important;
+}
+
+
+/* <!-- -----------------------------------premiume card End----------------------------------------------- --> */
+
+/* -----------------------------------------Contect Page Start------------------------------------------------- */
+
+/* <!-- -----------------------------------GET IN TOUCH  Start----------------------------------------------- --> */
+
+.get_in_touch_card_main_section{
+  background-color: #f5f5f5;
+}
+
+.get_in_touch_card div i{
+   background-color: var(--color);
+   color: var(--white);
+   font-size: 35px;
+   line-height: 80px;
+   border-radius: 50%;
+   height: 80px;
+   width: 80px;
+   transition: 0.2s;
+}
+
+.get_in_touch_card h2{
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px 0px 15px 0px;
+}
+
+.get_in_touch_card:hover div i{
+  color: var(--color);
+  background-color: var(--white)!important;
+  border: 1px solid var(--color);
+}
+
+/* <!-- -----------------------------------GET IN TOUCH End------------------------------------------------- --> */
+
+
+/* <!-- -----------------------------------QUICK CONTACT Star------------------------------------------------- --> */
+
+.quick_contect_page input{
+  display: block;
+  padding: 5px 2px 5px 10px;
+  font-size: 12px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.quick_contect_page textarea{
+  font-size: 12px;
+  width: 100%;
+}
+
+.quick_contect_page div{
+  background-color: var(--color);
+  font-size: 15px ;
+  margin-top: 15px;
+  padding: 11px;
+  border-radius: 3px;
+  color: var(--white);
+  transition: 0.3s;
+    &:hover{
+      background-color: var(--text-color);
+    }
+}
+
+/* <!-- -----------------------------------QUICK CONTACT End-------------------------------------------------- --> */
+
+
+
+
+/* -----------------------------------------Contect Page End--------------------------------------------------- */
